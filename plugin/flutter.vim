@@ -1,4 +1,4 @@
-function! StatelessWidget()
+function! s:StatelessWidget()
     let name = input("Widget Name: ")
     let lineNumber = line(".") - 1
     call append(lineNumber, "import 'package:flutter/material.dart';")
@@ -15,7 +15,7 @@ function! StatelessWidget()
     execute lineNumber + 7
 endfunc
 
-function! StatefulWidget()
+function! s:StatefulWidget()
     let name = input("Widget Name: ")
     let lineNumber = line(".") - 1
     call append(lineNumber, "import 'package:flutter/material.dart';")
@@ -40,6 +40,6 @@ function! StatefulWidget()
     execute lineNumber + 15
 endfunc
 
-:command! StatefulWidget :call StatefulWidget()
-:command! StatelessWidget :call StatelessWidget()
+:command! StatefulWidget :call s:StatefulWidget()
+:command! StatelessWidget :call s:StatelessWidget()
 
